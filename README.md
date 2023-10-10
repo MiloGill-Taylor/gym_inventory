@@ -1,15 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Configuration:
+
+ruby: 3.1.2
+
+rails: 7.0.4
+
+How to Run Locally:
+- Download repo
+- Run bundle config set --local without 'production'
+- Run bundle
+- Run rails server
+- navigate to 'http://localhost:3000/' on any browser
+
+
 
 Things you may want to cover:
 
-* Ruby version
+
 
 * System dependencies
 
-* Configuration
+
 
 * Database creation
 
