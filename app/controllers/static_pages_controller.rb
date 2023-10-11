@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
 
   def search
     @gym_item = GymItem.new
-    @gym_items = GymItem.where("name = ?", params[:search][:name].downcase).paginate(page: params[:page])
+    @gym_items = GymItem.where("name LIKE ?", "%#{params[:search][:name].downcase}%").paginate(page: params[:page])
     render 'home', status: :see_other
   end 
 
