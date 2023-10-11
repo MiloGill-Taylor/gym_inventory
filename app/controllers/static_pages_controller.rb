@@ -15,9 +15,8 @@ class StaticPagesController < ApplicationController
   end 
 
   def filter
-    filter = params[:filter].to_sym
+    filter = params[:filter]
     session[filter] = !session[filter]
-    p session[filter]
     redirect_to root_url, status: :see_other
   end 
 
