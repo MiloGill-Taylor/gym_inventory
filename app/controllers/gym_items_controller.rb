@@ -6,6 +6,7 @@ class GymItemsController < ApplicationController
 			flash[:success] = 'New equipment successfuly acquired'
 			redirect_to root_url, status: :see_other
 		else 
+			@gym_items = GymItem.paginate(page: params[:page], per_page: 5)
 			render 'static_pages/home', status: :unprocessable_entity
 		end 
 	end 

@@ -50,6 +50,7 @@ main {
 				max-width: 100%;
 			}
 			.button {
+				font-size: 0.8em;
 				margin-top: 10px;
   				display: inline-block;
   				padding: 10px 20px;
@@ -73,5 +74,32 @@ main {
 
 	div.equipment {
 		flex: 1;
+		h3 {
+			text-align: center;
+		}
+		ol {
+			list-style: none;
+
+			li.gym_item {
+				margin-bottom: 10px;
+				.name {
+					display: block;
+					font-size: 1.2em;
+					font-weight: 600;
+				}
+				.description{
+					display: block;
+				}
+				.key-info {
+					font-weight: 550;
+				}
+				.times {
+					display: block;
+				}
+				.buttons {
+					display: block;
+				}
+			}
+		}
 	}
 }

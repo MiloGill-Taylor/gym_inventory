@@ -1,0 +1,6 @@
+<% if @gym_items.any? %>
+	<ol class='gym_items'>
+		<%= render @gym_items %>
+	</ol>
+	<%= will_paginate @gym_items, params: { controller: :static_pages, action: :home } %> <!-- Explicitly tell will_paginate which action to use, so no bug comes from using the create action and associated urls -->
+<% end %>
