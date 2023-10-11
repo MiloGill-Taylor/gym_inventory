@@ -20,4 +20,9 @@ module StaticPagesHelper
 		end
 	end
 
+	def format_time(time_with_zone)
+  		# Convert time to the desired format
+  		time_with_zone.strftime('%d/%m/%y %I:%M%P')
+	end
+
 end

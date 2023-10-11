@@ -3,6 +3,6 @@
 	<span class='description'> <%= gym_item.description %></span>
 	<span class='key-info'> Focus: </span> <%= get_full_focus gym_item.focus %> |
 	<span class='key-info'> Status:</span> <%= get_usage gym_item.in_use %> 
-	<span class='times'> <span class='key-info'> Acuired on: </span> <%= gym_item.created_at %> |<span class='key-info'> Last updated: </span> <%= gym_item.updated_at %> </span>
+	<span class='times'> <span class='key-info'> Acquired on: </span> <%= format_time gym_item.created_at %> |<span class='key-info'> Last updated: </span> <%= format_time gym_item.updated_at %> </span>
 	<span class='buttons'> <%= link_to 'toggle usage', gym_items_toggle_use_path(gym_item) %> | <%= link_to 'edit', edit_gym_item_path(gym_item) %> | <%= link_to 'remove', gym_item_path(gym_item), data: { "turbo-method": :delete, turbo_confirm: "You sure?" } %> </span>
 </li>
