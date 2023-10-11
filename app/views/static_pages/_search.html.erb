@@ -1,0 +1,16 @@
+<%= form_with(url: search_path, scope: :search, class: 'search') do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit 'Search', class: 'button' %>
+	<%= link_to 'Undo Search', root_url, class: "button" %>
+<% end %>
+
+<%= link_to 'Cardio', filter_path(filter: 'cardio'), 
+								  class: "filter-button #{is_filter_on? :cardio}" %>
+<%= link_to 'Strength-upper', filter_path(filter: 'strength_upper'), 
+                     					  class: "filter-button #{is_filter_on? :strength_upper}" %>
+<%= link_to 'Strength-lower', filter_path(filter: 'strength_lower'),
+										  class: "filter-button #{is_filter_on? :strength_lower}" %>
+<%= link_to 'Auxiliary', filter_path(filter: 'auxiliary'),
+									 class: "filter-button #{is_filter_on? :auxiliary}" %>

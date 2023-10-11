@@ -1,0 +1,10 @@
+<% provide(:title, 'Edit Equipment') %>
+<% provide(:button_text, 'Save Changes') %>
+<header>
+	<h1 class='title'> Edit Equipment </h1>
+</header>
+
+<main class='edit'>
+	<h2> <%= @gym_item.name.titleize %></h2>
+	<%= render 'form' %>
+</main>

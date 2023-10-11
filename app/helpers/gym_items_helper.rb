@@ -18,4 +18,8 @@ module GymItemsHelper
 			'Not in usage'
 		end 
 	end 
+
+	def get_focusses
+		['cardio', 'strength-upper', 'strength-lower', 'auxiliary']
+	end
 end

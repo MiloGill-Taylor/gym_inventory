@@ -12,15 +12,29 @@ class GymItemsController < ApplicationController
 	end 
 
 	def edit
+		@gym_item = GymItem.find(params[:id])
 	end 
 
 	def update
+		@gym_item = GymItem.find(params[:id])
+		if @gym_item.update gym_item_params 
+			flash[:success] = 'Equipment updated'
+			redirect_to root_url, status: :see_other
+		else
+			render 'edit', status: :unprocessable_entity
+		end 
 	end 
 
 	def destroy 
 		gym_item_to_destroy = GymItem.find(params[:id])
 		gym_item_to_destroy.destroy
 		flash[:success] = 'Removed Gym Equipment'
+		redirect_to root_url, status: :see_other
+	end
+
+	def toggle_use
+		@gym_item = GymItem.find(params[:id])
+		@gym_item.toggle!(:in_use)
 		redirect_to root_url, status: :see_other
 	end
 

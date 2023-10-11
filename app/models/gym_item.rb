@@ -14,6 +14,7 @@ class GymItem < ApplicationRecord
 	 		   length: { maximum: 255 },
 	 		   format: { with: VALID_FOCUS_REGEX }
 
+
 	private
 		def downcase_name_focus
 			self.name.downcase!

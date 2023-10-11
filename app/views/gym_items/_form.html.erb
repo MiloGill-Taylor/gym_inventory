@@ -5,12 +5,12 @@
 	<%= f.text_field :name, class: 'form-entry' %>
 
 	<%= f.label :focus %>
-	<%= f.text_field :focus, class: 'form-entry'  %>
+	<%= f.select :focus, get_focusses, include_blank: true, class: 'form-entry'  %>
 
 	<%= f.label :description %>
 	<%= f.text_area  :description, class: 'form-entry' %>
 
-	<%= f.submit 'Get New Equipment', class: 'button' %>
+	<%= f.submit yield(:button_text), class: 'button' %>
 <% end %>
 
 <h3> Focus categories:</h3>

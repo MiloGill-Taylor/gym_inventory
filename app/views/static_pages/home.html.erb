@@ -1,13 +1,16 @@
 <% provide(:title, 'Gym Inventory') %>
+<% provide(:button_text, 'Get New Equipment') %>
 <header>
 	<h1 class='title'> Inventory </h1>
 </header>
 
 <main>
 	<div class='new-equipment'>
-		<%= render 'gym_items/new' %>
+		<%= render 'gym_items/form' %>
 	</div>
 	<div class='equipment'>
+		<%= render 'static_pages/search' %>
+		
 		<%= render 'static_pages/equipment' %>
 	</div>
 </main>

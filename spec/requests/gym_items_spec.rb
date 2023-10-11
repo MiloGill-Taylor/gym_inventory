@@ -52,5 +52,39 @@ RSpec.describe "GymItems", type: :request do
     end 
   end 
 
+  context 'Edit equipment' do 
+    it 'should get edit page' do 
+      gym_item = GymItem.new(name: 'Treadmill',
+                             description: 'Running Machine',
+                             focus: 'cardio')
+      gym_item.save 
+      get edit_gym_item_path(gym_item)
+      expect(response).to render_template 'gym_items/edit'
+    end
+
+    it 'success should update equipment and redirect to root' do 
+      gym_item = GymItem.new(name: 'Treadmill',
+                             description: 'Running Machine',
+                             focus: 'cardio')
+      gym_item.save 
+      patch gym_item_path(gym_item), params: { gym_item: { name: gym_item.name,
+                                                           description: 'Woohoo',
+                                                           focus: gym_item.focus } }
+      expect(gym_item.reload.description).to eq 'Woohoo'
+      expect(response).to redirect_to root_url
+    end
+
+    it 'failure should not update equipment and re-render edit' do 
+      gym_item = GymItem.new(name: 'Treadmill',
+                             description: 'Running Machine',
+                             focus: 'cardio')
+      gym_item.save 
+      patch gym_item_path(gym_item), params: { gym_item: { name: gym_item.name,
+                                                           description: '',
+                                                           focus: gym_item.focus } }
+      expect(gym_item.reload.description).to eq 'Running Machine'
+      expect(response).to render_template 'gym_items/edit'
+    end
+  end
 
 end
