@@ -1,4 +1,5 @@
 class GymItem < ApplicationRecord
+	default_scope { order(name: :asc) }
 	before_save :downcase_name_focus
 	validates :name, 
 			   presence: true,
