@@ -1,0 +1,31 @@
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex; 
+	flex-direction: column;
+	font-family: sans-serif;
+}
+
+header {
+	height: 75px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+main {
+	flex: 1;
+	display: flex;
+
+	div.new-equipment {
+		width: 20%;
+		height: 100%;
+	}
+
+	div.equipment {
+		flex: 1;
+	}
+}
