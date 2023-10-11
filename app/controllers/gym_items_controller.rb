@@ -18,6 +18,10 @@ class GymItemsController < ApplicationController
 	end 
 
 	def destroy 
+		gym_item_to_destroy = GymItem.find(params[:id])
+		gym_item_to_destroy.destroy
+		flash[:success] = 'Removed Gym Equipment'
+		redirect_to root_url, status: :see_other
 	end
 
 	private 

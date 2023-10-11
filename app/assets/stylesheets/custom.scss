@@ -70,13 +70,14 @@ main {
 				color: red;
 			}
 		}
+
+		h3 {
+			max-width: 100%
+		}
 	}
 
 	div.equipment {
 		flex: 1;
-		h3 {
-			text-align: center;
-		}
 		ol {
 			list-style: none;
 
