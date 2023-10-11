@@ -16,6 +16,21 @@ header {
 	background-color: black;
 }
 
+/* flash */
+div.success {
+	background-color: hsla(120, 100%, 50%, 0.3);
+	border: 2px solid hsla(120, 100%, 50%, 1);
+	border-radius: 20px;
+	text-align: center;
+}
+
+div.warning {
+	background-color: hsla(0, 100%, 50%, 0.7);
+	border: 2px solid hsla(0, 100%, 50%, 1);
+	border-radius: 20px;
+	text-align: center;
+}
+
 main {
 	flex: 1;
 	display: flex;
@@ -23,6 +38,37 @@ main {
 	div.new-equipment {
 		width: 20%;
 		height: 100%;
+
+		form {
+			padding: 10px;
+			input {
+				display: block;
+				max-width: 100%;
+			}
+			textarea {
+				display: block;
+				max-width: 100%;
+			}
+			.button {
+				margin-top: 10px;
+  				display: inline-block;
+  				padding: 10px 20px;
+  				background-color: #444; /* Gray background color */
+  				color: white; /* White text color */
+  				border: none;
+  				border-radius: 5px;
+  				cursor: pointer;
+  				transition: background-color 0.3s; /* Smooth transition effect for the background color */
+			}
+
+			.button:hover {
+  				background-color: #3498db; /* Blue background color on hover */
+			}
+
+			.error-messages {
+				color: red;
+			}
+		}
 	}
 
 	div.equipment {

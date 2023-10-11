@@ -1,0 +1,15 @@
+<%= form_with( model: @gym_item) do |f| %>
+	<%= render 'gym_items/error_messages', object: f.object %> 
+
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-entry' %>
+
+	<%= f.label :focus %>
+	<%= f.text_field :focus, class: 'form-entry'  %>
+
+	<%= f.label :description %>
+	<%= f.text_area  :description, class: 'form-entry' %>
+
+	<%= f.submit 'Get New Equipment', class: 'button' %>
+<% end %>
+
